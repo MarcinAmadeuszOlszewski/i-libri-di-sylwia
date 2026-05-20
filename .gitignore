@@ -83,3 +83,7 @@ target/
 !**/src/main/**/build/
 !**/src/test/**/build/
 ### VS Code ###
+
+copilot-instructions.md
+workspace.xml
+vcs.xml
