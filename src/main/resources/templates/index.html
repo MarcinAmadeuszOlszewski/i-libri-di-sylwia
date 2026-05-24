@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>i libri di Sylwia</title>
+</head>
+<body>
+<main>
+    <h1>Demo page</h1>
+    <p id="work-status">Loading...</p>
+</main>
+<script th:inline="javascript">
+    const endpoint = /*[[@{/v1/work}]]*/ "/v1/work";
+    const workStatusElement = document.getElementById("work-status");
+
+    fetch(endpoint)
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`Request failed with status ${response.status}`);
+            }
+
+            return response.text();
+        })
+        .then((message) => {
+            workStatusElement.textContent = message;
+        })
+        .catch((error) => {
+            workStatusElement.textContent = error.message;
+        });
+</script>
+</body>
+</html>
