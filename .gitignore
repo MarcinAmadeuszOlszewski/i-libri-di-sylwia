@@ -91,3 +91,6 @@ copilot-instructions.md
 workspace.xml
 vcs.xml
 notes.txt
+.claude/**/10x-*
+.github/**/10x-*
+.agents/**/10x-*
